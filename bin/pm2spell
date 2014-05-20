@@ -1,13 +1,81 @@
-#!/bin/node
+#!/usr/bin/env node
 
 var commander = require('commander');
 var pkg       = require('../package.json');
+var fs = require('fs');
+var CLI = require('../lib/CLI');
+var cst = require('../constants.js');
+var q = require('../scripts/question.js');
+
 
 commander.version(pkg.version)
-  .option('-v --version', 'get version')
-  .option('-s --silent', 'hide all messages', false)
-  .option('-m --mini-list', 'display a compacted list without formatting')
-  .option('-f --force', 'force actions')
-  .option('--run-as-user <run_as_user>', 'The user or uid to run a managed process as')
-  .option('--run-as-group <run_as_group>', 'The group or gid to run a managed process as')
+ // .option('-v --version', 'get version')
   .usage('[cmd] app');
+
+//
+// Helper function to fail when unknown command arguments are passed
+//
+function failOnUnknown(fn) {
+  return function(arg) {
+    if (arguments.length > 1) {
+      console.log(cst.PREFIX_MSG + '\nUnknown command argument: ' + arg);
+      commander.outputHelp();
+      process.exit(cst.ERROR_EXIT);
+    }
+    return fn.apply(this, arguments);
+  };
+}
+
+
+
+//
+// Login command
+//
+commander.command('add')
+  .description('add an Warlocks server')
+  .action(function(){
+  	CLI.addServer();
+  });
+
+
+//
+// Catch all
+//
+commander.command('*')
+  .action(function() {
+    console.log(cst.PREFIX_MSG + '\nCommand not found');
+    commander.outputHelp();
+    process.exit(cst.ERROR_EXIT);
+  });
+
+//
+// Display help
+//
+if (process.argv.length == 2) {
+  commander.parse(process.argv);
+  commander.outputHelp();
+  process.exit(cst.ERROR_EXIT);
+}else{
+	commander.parse(process.argv);
+}
+
+
+
+//
+// Init
+//
+(function init() {
+  fs.exists(cst.DEFAULT_FILE_PATH, function(exist) {
+    if (!exist) {
+      console.log('Initializing folder for pm2-spell on %s', cst.DEFAULT_FILE_PATH);
+      fs.mkdirSync(cst.DEFAULT_FILE_PATH);
+      fs.mkdirSync(cst.DEFAULT_LOG_PATH);
+      fs.mkdirSync(cst.DEFAULT_PID_PATH);
+    }
+  });
+})();
+
+
+
+
+
