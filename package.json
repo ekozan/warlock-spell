@@ -1,0 +1,53 @@
+{
+ "author": {
+    "name": "Maxime FRANCK",
+    "email": "geeked7@gmail.com"
+  },
+  "name": "pm2-spell",
+  "description": "Clien of pm2-Warlok ",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekozan/pm2-spell.git"
+  },
+
+  "os" : [ "!win32" ],
+  "engines": {
+    "node": ">=0.10"
+  },
+
+  "directories": {
+    "bin" : "./bin",
+    "lib" : "./lib",
+    "example" : "./examples"
+  },
+  "main": "index.js",
+  "bin": {
+    "pm2spell": "./bin/pm2spell"
+  },
+
+  "keywords": [
+    "cli",
+    "sysadmin",
+    "tools",
+    "pm2",
+    "node-pm2",
+    "production",
+    "pm2.io",
+    "clustering",
+    "pm2-spell",
+    "pm2-warlock"
+  ],
+
+  "dependencies": {
+    "commander": "2.2.0",
+    "cli-table": "0.3.0",
+    "colors": "0.6.2"
+    },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
+

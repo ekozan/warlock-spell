@@ -1,0 +1,13 @@
+#!/bin/node
+
+var commander = require('commander');
+var pkg       = require('../package.json');
+
+commander.version(pkg.version)
+  .option('-v --version', 'get version')
+  .option('-s --silent', 'hide all messages', false)
+  .option('-m --mini-list', 'display a compacted list without formatting')
+  .option('-f --force', 'force actions')
+  .option('--run-as-user <run_as_user>', 'The user or uid to run a managed process as')
+  .option('--run-as-group <run_as_group>', 'The group or gid to run a managed process as')
+  .usage('[cmd] app');
