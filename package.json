@@ -1,31 +1,30 @@
 {
- "author": {
+  "author": {
     "name": "Maxime FRANCK",
     "email": "geeked7@gmail.com"
   },
-  "name": "pm2-spell",
-  "description": "Clien of pm2-Warlok ",
+  "name": "warlock-spell",
+  "description": "Client of warlock-Warlok ",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ekozan/pm2-spell.git"
+    "url": "https://github.com/ekozan/warlock-spell.git"
   },
-
-  "os" : [ "!win32" ],
+  "os": [
+    "!win32"
+  ],
   "engines": {
-    "node": ">=0.10"
+    "node": "*"
   },
-
   "directories": {
-    "bin" : "./bin",
-    "lib" : "./lib",
-    "example" : "./examples"
+    "bin": "./bin",
+    "lib": "./lib",
+    "example": "./examples"
   },
   "main": "index.js",
   "bin": {
     "pm2spell": "./bin/pm2spell"
   },
-
   "keywords": [
     "cli",
     "sysadmin",
@@ -35,19 +34,17 @@
     "production",
     "pm2.io",
     "clustering",
-    "pm2-spell",
-    "pm2-warlock"
+    "spell",
+    "warlock-spell",
+    "warlock"
   ],
-
   "dependencies": {
-    "commander": "2.2.0",
     "cli-table": "0.3.0",
-    "colors": "0.6.2"
-    },
+    "colors": "0.6.2",
+    "warlock-api": "0.0.1",
+    "flatiron": "0.3.11",
+    "pkginfo": "^0.3.0"
+  },
   "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
-  }
+  "optionalDependencies": {}
 }
-
