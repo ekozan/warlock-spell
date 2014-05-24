@@ -43,7 +43,15 @@
     "colors": "0.6.2",
     "warlock-api": "0.0.1",
     "flatiron": "0.3.11",
-    "pkginfo": "^0.3.0"
+    "pkginfo": "0.3.0",
+    "flatiron-cli-config": "0.1.4",
+    "prompt": "0.2.12",
+    "semver": "^2.3.0",
+    "fstream": "^0.1.25",
+    "progress": "^1.1.5",
+    "fstream-npm": "^0.1.7",
+    "tar": "^0.1.19",
+    "ladder": "0.0.1"
   },
   "devDependencies": {},
   "optionalDependencies": {}
