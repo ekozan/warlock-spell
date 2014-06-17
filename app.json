@@ -1,1 +1,1 @@
-{"name":"warlock-spell","subdomain":"undefined-warlock-spell","engines":"node 0.10.x","scripts":{"start":"node index.js"},"version":"0.0.0"}
+{"name":"warlock-spell","subdomain":"undefined-warlock-spell","engines":"node10","scripts":{"start":"node index.js"},"version":"0.0.1"}
